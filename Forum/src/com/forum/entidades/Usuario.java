@@ -27,6 +27,8 @@ public class Usuario {
 	@Column(name="nivel")
 	private Nivel nivel;
 	
+	private String teste;
+	
 	public Usuario() {
 		
 	}
