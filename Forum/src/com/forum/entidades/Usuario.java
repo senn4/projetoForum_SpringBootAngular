@@ -1,37 +1,48 @@
 package com.forum.entidades;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.forum.enuns.Nivel;
+
+@Entity
+@Table(name="usuario")
 public class Usuario {
 	
-	private int id;
-	
+	@Id
+	@Column(name="nick")	
 	private String nick;
 	
+	@Column(name="nome")
 	private String nome;
 	
+	@Column(name="email")
 	private String email;
 	
+	@Column(name="senha")
 	private String senha;
+	
+	@Column(name="nivel")
+	private Nivel nivel;
 	
 	public Usuario() {
 		
 	}
 
-	public Usuario(int id, String nick, String nome, String email, String senha) {
+	
+	
+	public Usuario(String nick, String nome, String email, String senha, Nivel nivel) {
 		super();
-		this.id = id;
 		this.nick = nick;
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;
+		this.nivel = nivel;
 	}
 
-	public int getId() {
-		return id;
-	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getNick() {
 		return nick;
@@ -64,7 +75,15 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
-	
 
+	public Nivel getNivel() {
+		return nivel;
+	}
+
+	public void setNivel(Nivel nivel) {
+		this.nivel = nivel;
+	}
+
+	
+	
 }
